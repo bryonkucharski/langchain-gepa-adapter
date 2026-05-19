@@ -9,8 +9,11 @@ from langchain_gepa_adapter.logging import (
 )
 from langchain_gepa_adapter.proposer import make_default_proposer, make_reflection_lm
 
+__version__ = "0.1.0"
+
 __all__ = [
     "LangChainGEPAAdapter",
+    "__version__",
     "disable_verbose_logging",
     "enable_verbose_logging",
     "last_message_text",

@@ -5,11 +5,27 @@ build-backend = "hatchling.build"
 [project]
 name = "langchain-gepa-adapter"
 version = "0.1.0"
-description = "GEPA adapter for LangChain v1 chat models"
+description = "GEPA adapter for LangChain v1 — optimize prompts for chat models, agents, and LangGraph pipelines"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
-authors = [{ name = "bkuchars" }]
+license = { file = "LICENSE" }
+authors = [{ name = "Bryon Kucharski", email = "bryonkucharski@gmail.com" }]
+keywords = ["langchain", "gepa", "prompt-optimization", "llm", "langgraph", "agents"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "gepa>=0.0.5",
     "langchain>=1.0",
@@ -26,7 +42,25 @@ examples = [
 ]
 
 [project.urls]
-Repository = "https://github.com/bkuchars/langchain-gepa-adapter"
+Homepage = "https://github.com/bryonkucharski/langchain-gepa-adapter"
+Repository = "https://github.com/bryonkucharski/langchain-gepa-adapter"
+Issues = "https://github.com/bryonkucharski/langchain-gepa-adapter/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/langchain_gepa_adapter"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/langchain_gepa_adapter",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "pyproject.toml",
+]
+exclude = [
+    "llm_configs",
+    ".env",
+    ".venv",
+    "images",
+    "uv.lock",
+]
