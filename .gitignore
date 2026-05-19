@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local model configs (gateway URLs, API keys); never publish
+llm_configs/
